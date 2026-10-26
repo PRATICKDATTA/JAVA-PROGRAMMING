@@ -1,50 +1,42 @@
 # Java Programming Assignment
 
-This repository contains implementations for the following 3 object-oriented programming problems in Java:
+This repository contains modular Java implementations for Object-Oriented Programming (OOP) concepts.
 
 ---
 
-## 1. Abstract Accounts Hierarchy (`question1/`)
-- **[Accounts.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question1/Accounts.java)**: Abstract class containing:
-  - Data Members: `balance`, `accountNumber`, `accountHoldersName`, `address`
-  - Methods: `withdrawl(double)` (abstract), `deposit(double)` (abstract), `display()`
-- **[SavingsAccount.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question1/SavingsAccount.java)**: Subclass adding:
-  - Data Member: `rateOfInterest`
-  - Method: `calculateAmount()` calculating interest and total amount
+## Part 1: Accounts, Multiple Inheritance & Student Management
+
+### 1. Abstract Accounts Hierarchy (`question1/`)
+- **[Accounts.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question1/Accounts.java)**: Abstract class containing `balance`, `accountNumber`, `accountHoldersName`, `address`, `withdrawl(double)`, `deposit(double)`, and `display()`.
+- **[SavingsAccount.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question1/SavingsAccount.java)**: Subclass adding `rateOfInterest` and `calculateAmount()`.
 - **[Main.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question1/Main.java)**: Test driver for `SavingsAccount`.
 
----
+### 2. Multiple Inheritance Framework: Bank (`question2/`)
+- **[Bank.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question2/Bank.java)**: Bank interface.
+- **[Customer.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question2/Customer.java)**: Customer class.
+- **[Account.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question2/Account.java)**: Extends `Customer` and implements `Bank`.
+- **[Main.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question2/Main.java)**: Test driver.
 
-## 2. Multiple Inheritance Framework (`question2/`)
-- Demonstrates how Java achieves multiple inheritance via interfaces and classes.
-- **[Bank.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question2/Bank.java)**: Bank interface with attributes (`BANK_NAME`, `IFSC_CODE`) and abstract methods (`openAccount()`, `viewAccountDetails()`, `applyServiceCharges()`).
-- **[Customer.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question2/Customer.java)**: Base class holding customer personal information.
-- **[Account.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question2/Account.java)**: Inherits from `Customer` and implements `Bank`.
-- **[Main.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question2/Main.java)**: Test driver executing banking transactions.
-
----
-
-## 3. Student, Hostel, and Department Management (`question3/`)
-- **[Department.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question3/Department.java)**: Interface containing `deptName`, `deptHead`, and print methods.
-- **[Hostel.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question3/Hostel.java)**: Class with `hostelName`, `hostelLocation`, `numberofRooms` with getter/printing methods.
-- **[Student.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question3/Student.java)**: Extends `Hostel` and implements `Department`. Contains `studentName`, `regdNo`, `electiveSubject`, `avgMarks`, along with `getData()` and `printData()`.
-- **[StudentManagementDriver.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question3/StudentManagementDriver.java)**: Menu-driven CLI supporting:
-  1. Admit new student
-  2. Migrate a student (search by registration number)
-  3. Display details
-  4. Exit
+### 3. Student, Hostel, and Department Management (`question3/`)
+- **[Department.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question3/Department.java)**: Interface.
+- **[Hostel.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question3/Hostel.java)**: Class with hostel details.
+- **[Student.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question3/Student.java)**: Extends `Hostel` and implements `Department`.
+- **[StudentManagementDriver.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/question3/StudentManagementDriver.java)**: Menu-driven program (Admit, Migrate, Display).
 
 ---
 
-## How to Set a Backdated Git Commit (2 Weeks Ago)
+## Part 2: Static Members, Pay Calculation & Gross Interface
 
-Run the following commands in Git Bash or PowerShell:
+### 1. Employee Static Member (`lab2_question1/`)
+- **[Employee.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/lab2_question1/Employee.java)**: Private fields (`name`, `department`, `salary`) and static `companyName`.
+- **[Main.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/lab2_question1/Main.java)**: Initializes and displays 5 employees of the same company.
 
-```bash
-git init
-git add .
-git commit --date="14 days ago" -m "Initial commit for Java OOP assignments"
-git branch -M main
-git remote add origin <YOUR_REMOTE_GITHUB_REPO_URL>
-git push -u origin main
-```
+### 2. Highest Gross Salary Finder (`lab2_question2/`)
+- **[Employee.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/lab2_question2/Employee.java)**: Calculates `DA`, `HRA`, and `gross_salary`.
+- **[Main.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/lab2_question2/Main.java)**: Accepts multiple employees and prints the one with the highest gross salary.
+
+### 3. Multiple Inheritance: Gross, Employee & Salary (`lab2_question3/`)
+- **[Gross.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/lab2_question3/Gross.java)**: Interface for gross salary calculations.
+- **[Employee.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/lab2_question3/Employee.java)**: Base employee class (`empId`, `name`, `designation`).
+- **[Salary.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/lab2_question3/Salary.java)**: Extends `Employee` and implements `Gross`.
+- **[Main.java](file:///d:/ANTIGRAVITY/JAVA%20PROGRAMMING/lab2_question3/Main.java)**: Driver class displaying salary breakdown.
